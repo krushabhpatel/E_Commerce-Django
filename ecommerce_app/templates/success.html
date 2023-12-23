@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Add to Cart
+{% endblock %}
+
+{% block content %}
+<section class="h-100" style="background-color: #eee;">
+    <div class="text-center">
+        <h1 class="display-1 fw-bold">Order placed successfully!!!</h1>
+        <p class="lead">
+            Continue your Shopping...
+        </p>
+        <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+    </div>
+</section>
+{% endblock %}

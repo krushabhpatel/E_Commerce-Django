@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    All Products
+{% endblock %}
+
+{% block content %}
+<div class="py-3 py-md-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="mb-4">Our Products</h4>
+            </div>
+            {% for i in data %}
+            <div class="col-md-3">
+                <div class="product-card">
+                    <div class="product-card-img">
+                        <label class="stock bg-success">In Stock</label>
+                        <img src="{{i.productImage.url}}" alt="loading" width="250px" height="270px">
+                    </div>
+                    <div class="product-card-body">
+                        <p class="product-brand">{{i.productBrand}}</p>
+                        <h5 class="product-name">
+                           <a href="">
+                                {{i.productName}}
+                           </a>
+                        </h5>
+                        <div>
+                            <span class="selling-price">₹{{i.productSellingPrice}}</span>
+                            <span class="original-price">₹{{i.productOriginalPrice}}</span>
+                        </div>
+                        <div class="mt-2">
+                            <a href="" class="btn btn1">Add To Cart</a>
+                            <a href="" class="btn btn1"> <i class="fa fa-heart"></i> </a>
+                            <a href="{% url 'productView' i.id %}" class="btn btn1"> View </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
